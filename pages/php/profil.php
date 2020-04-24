@@ -2,7 +2,6 @@
     session_start();
     require_once '../../assets/include/NavbarConnecter.php';
     require_once '../../function/functions.php';
-    // error_reporting(E_ALL & ~E_WARNING);
 ?>
 
 
@@ -18,10 +17,6 @@ if(isset($_GET['id']) AND !empty($_SESSION['id']))
 }
     
 ?>
-
-
-
-
 
 <?php
     require_once '../../assets/include/footer.html';

@@ -12,7 +12,6 @@ require_once '../../function/functions.php';
     <input type="password" class="form-field form-inscription" name="mdps"  placeholder="Entrez à nouveau votre mdp" required>
     <input type="text" class="form-field form-inscription" name="prenom"  placeholder="Entrez votre prenom" required>
     <input type="text" class="form-field form-inscription" name="nom"  placeholder="Entrez votre nom" required>
-     <!-- <input type="file" name="avatar" placeholder="Entrez votre avatar">  -->
     <input type="submit" class="btn press red inscription" name="ajout">
 </form>
 

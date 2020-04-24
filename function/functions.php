@@ -85,11 +85,8 @@ function getInscription()
         $reponse = $bdd->query('SELECT email FROM inscription');
         
         while ($donnees = $reponse->fetch()) {
-            // $conc .= $donnees['email'] . '<br />';
             if ($donnees['email'] == $_POST['email']) {
                 $conc = 'pas';
-                
-                
                 return $conc;
             break;
         }
@@ -326,11 +323,13 @@ function getMainImageBiens($id_bien)
     $files1 = scandir($dir);
     $conc = '<div class="imagesBiens">';
     if (!empty($files1[2])) {
-        $conc .= '<img src="../../assets/photos_biens/' . $id_bien . '/' . $files1[2] . '" class="imagebiens" alt="Photo du bien observé"  height="500px" id="photo1">';
+        $conc .= '<img src="../../assets/photos_biens/' . $id_bien . '/' . $files1[2] . 
+        '" class="imagebiens" alt="Photo du bien observé"  height="500px" id="photo1">';
     }
     $conc .= '</div>';
     return $conc;
 }
+
 function getMainImageBiensIndex($id_bien)
 {
     $conc = "";
@@ -338,7 +337,8 @@ function getMainImageBiensIndex($id_bien)
     $files1 = scandir($dir);
     $conc = '<div class="imagesBiens">';
     if (!empty($files1[2])) {
-        $conc .= '<img src="assets/photos_biens/' . $id_bien . '/' . $files1[2] . '" class="imagebiens" alt="Photo du bien observé" height="500px" id="photo1">';
+        $conc .= '<img src="assets/photos_biens/' . $id_bien . '/' . $files1[2] . 
+        '" class="imagebiens" alt="Photo du bien observé" height="500px" id="photo1">';
     }
     $conc .= '</div>';
     return $conc;
@@ -420,13 +420,10 @@ function bienUserModify()
             die('Erreur : ' . $e->getMessage());
         }
         
-        
-        
         $req = $bdd->prepare("UPDATE liste_biens SET titre_article=:titre_article, prix=:prix, nbr_personnes=:nbr_personnes, descriptions=:descriptions, ville=:ville, adresse=:adresse, id_user=:id_user WHERE id=:id");
         
         $req->execute(["titre_article" => $_POST['titre_article'], "prix" => $_POST['prix'], "nbr_personnes" => $_POST['nbr_personnes'], "descriptions" => $_POST['descriptions'], 'ville'=>$_POST['ville'],'adresse' => $_POST['adresse'], "id_user" => $_SESSION['id'], 'id' => $_GET['id']]);
         
-        // header("Location: modificationBiens.php?id=" . $_GET['id']);
         return $conc;
     }
 }
@@ -487,8 +484,6 @@ function getFormBiensInfo()
             
             $conc .= setPhotosBiens();
             
-            // a utiliser pour plus de sécurité dans les inputs : htmlentities()
-            
             header("Location: ../../pages/php/biens.php?id=" . $_SESSION['id']);
         }
         
@@ -518,10 +513,7 @@ function setPhotosBiens()
             $conc .= verifyPhoto("photo_1"); // verify photo 1
             $conc .= verifyPhoto("photo_2"); // verify photo 2
             $conc .= verifyPhoto("photo_3"); // verify photo 2
-            
-            
-            
-            
+                        
             $req = $bdd->prepare('INSERT INTO liste_biens SET titre_article=:titre_article, prix=:prix, nbr_personnes=:nbr_personnes, descriptions=:descriptions, ville=:ville, adresse=:adresse, id_user=:id_user');
             $req->execute(['titre_article' => $_POST['titre_article'], 'prix' => $_POST['prix'], 'nbr_personnes' => $_POST['nbr_personnes'], 'descriptions' => $_POST['descriptions'], 'ville' => $_POST['ville'], 'adresse' => $_POST['adresse'], 'id_user' => $_SESSION['id']]);
             $idBiens = $bdd->lastInsertId();
@@ -532,14 +524,13 @@ function setPhotosBiens()
             $conc .= moveImagesBiens("photo_1", $idBiens);
             $conc .= moveImagesBiens("photo_2", $idBiens);
             $conc .= moveImagesBiens("photo_3", $idBiens);
-            // htmlentities()
             
             $conc .= 'Votre bien a bien été mis en vente';
             
             
         }
-        
         return $conc;
+        
     } else {
         if (!empty($_SESSION['id'])) {
             header("Location: ../../pages/php/biens.php?id=" . $_SESSION['id']);
@@ -580,30 +571,6 @@ function verifyPhoto($photo)
     }
     return $conc;
 }
-
-// a enlever
-function trylastid()
-{
-    $conc = '';
-    try {
-        $bdd = new PDO('mysql:host=localhost;dbname=test_web;charset=utf8', 'root', '');
-    } catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
-    $req = $bdd->query("SELECT id FROM liste_biens order by id asc");
-    // $conc .= $req->insert_id;
-    
-    while ($donnees = $req->fetch()) {
-        
-        $id = $donnees['id'];
-    }
-    
-    $req->closeCursor();
-    // $conc .= $bdd::LAST_INSERT_ID();
-    
-    return $conc;
-}
-// Fin de a enlever
 
 
 // fonction concernant le fond //
@@ -885,13 +852,13 @@ function getFormReservation()
     $nbrpresonnes = $reponse['nbr_personnes'];
     
     $conc = "<form action='' method='post'>";
-    //rajouter des labels
+
     $conc .= "<label for='date'>Date d'arrivé</label>";
     $conc .= "<input type='date' class='form-field form-date' id='start' name='date_debut'  min='$currentDate'  required>";
-    //rajouter des labels
+
     $conc .= "<label for='date'>Date de départ</label>";
     $conc .= "<input type='date' id='end' class='form-field form-date' name='date_fin' min='$currentDate' required>";
-    //rajouter des labels
+
     $conc .= "<label for='nbr_personnes'>Nombre de personnes</label>";
     $conc .= "<input type='number' id='nbr_personnes' class='form-field form-personne' name='nbr_personnes' min='1' max='$nbrpresonnes' required>";
     

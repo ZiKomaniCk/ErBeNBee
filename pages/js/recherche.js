@@ -17,16 +17,12 @@ function init(){
             };
             
             var formData = new FormData();
-            formData.append("keywords", keywords); // key > value
+            formData.append("keywords", keywords);
             
             xhr.open("POST", "function/script/script.php", true);
-            xhr.send(formData);
-            
+            xhr.send(formData);   
         }
-        
     });
     
 }
 window.onload = init;
-
-
