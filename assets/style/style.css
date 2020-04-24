@@ -1,0 +1,399 @@
+/* général */
+body {
+    background: rgb(254,254,254);
+    background: linear-gradient(146deg, rgba(254,254,254,1) 0%, rgba(223,223,223,1) 100%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 1rem 0rem 0.2rem;
+}
+
+p {
+    color: rgb(80, 80, 80);
+    font-size: 20px;
+    margin: 10px;
+    FONT-WEIGHT: 100;
+    margin-left: 3%;
+}
+
+h1 {
+    color: #F98C37;
+    text-shadow: 1px 1px 0px #7b7b7b;
+    font-size: 55px;
+    text-align: center;
+    margin: 50px 15px 15px 15px;
+    FONT-WEIGHT: 900;
+}
+
+h3 {
+    color: #F98C37;
+    text-shadow: 1px 1px 0px #7b7b7b;
+    font-size: 35px;
+    FONT-WEIGHT: 800;
+}
+
+h6 {
+    color: rgb(80, 80, 80);
+}
+
+.red {
+    background-color: #F98C37;
+    color: #fff;
+}
+
+.realred {
+    background-color: #e92626;
+    color:#fff;
+}
+
+/* navbar */
+
+.navbar {
+    box-shadow: 0 3px 1px 0 #5C8FE9;
+    padding: 2rem;
+    background-color: white;
+}
+
+.primary {
+    background-color: #ffffff;
+    color: #5C8FE9;
+}
+
+.bee-navbar {
+    color: #E57926;
+    font-size: 25px;
+}
+
+.connexion-navbar {
+    border-color: #5c8fe9;
+    border-radius: 10px;
+}
+
+.navbar .navbar-brand {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-size: 30px;
+    color: #5C8FE9;
+}
+
+.navbar .navbar-menu .navbar-link {
+    color: #5c8fe9;
+    text-decoration: none;
+    display: block;
+    padding: 0 .6rem;
+    transition: background-color .23s ease;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+a .navbar-link .connexion {
+    color: white;
+}
+
+/* card */
+
+.card {
+    box-shadow: 5px 4px 0px 2px #5c8fe9;
+    margin: .5rem 18%;
+    border-style: solid;
+    border-color: #5c8fe9;
+    margin-top: 5%;
+    background-color: white;
+}
+
+
+.hoverable-1 {
+    -webkit-transition-property: box-shadow,-webkit-transform;
+    transition-property: box-shadow,transform,-webkit-transform;
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: cubic-bezier(0.53, 0.3, 0, 1.06);
+    transition-duration: .4s;
+}
+
+
+.card .card-header {
+    font-size: 1.5rem;
+    padding: 1rem;
+    padding-left: 3%;
+    padding-bottom: 1%;
+    border-top-right-radius: inherit;
+}
+
+.card .card-content {
+    padding: 1.5rem;
+    padding-top: 1%;
+    padding-left: 5%;
+}
+
+
+/* Connexion */
+
+
+form.form-material.form-connexion {
+    margin-top: 2%;
+}
+
+input.form-field.form-connexion {
+    width: 25%;
+    text-align: center;
+    margin: 1% auto;
+}
+
+input.btn.press.red.connexion {
+    width: 15%;
+    margin: 2% auto ;
+}
+
+
+/* footer */
+
+.footer {
+    min-height: 3rem;
+    width: 100%;
+    padding: 0 .5rem;
+    display: -webkit-box;
+    box-shadow: 0 -1px 0px 0 #5c8fe9;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+/* field */
+
+.form-material .form-field:not(.form-default) {
+    --form-material-color: #4c9f85;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    align-self: start;
+    border-width: 1px;
+    border-color: #5c8fe9;
+    border-style: solid;
+    width: 30%;
+    margin:1% auto;
+    text-align: center;
+}
+
+
+/* modifier compte */
+
+input.avatar-modifier {
+    margin-left: 35%;
+}
+
+label {
+    font-size: 20px;
+    text-align: center;
+    margin-left: 35%;
+    FONT-WEIGHT: 100;
+}
+
+input.btn.press.red.modifier {
+    margin: 3% auto;
+}
+
+/* ajouter bien */
+
+input.btn.press.red.ajouter-bien {
+    margin: 0 auto;
+    margin-top: 3%;
+}
+
+/* Information personelle */
+
+a.btn.press.red.infoperso {
+    margin-top: 3%;
+    margin-left: 13%;
+}
+
+p.infoperso {
+    font-size: 30px;
+}
+
+/* inscription */
+
+input.btn.press.red.inscription {
+    margin: 2% auto;
+    width: 15%;
+}
+
+
+/* Recherche */
+
+input.btn.press.red.recherche {
+    margin: 2% auto;
+
+}
+
+/* dropdown */
+
+button.btn.primary.dropdown-trigger {
+    margin-top: 5px;
+}
+
+/* image */
+
+.imagebiens {
+    margin-top: 5px;
+}
+
+.imageprofil {
+    margin-left: 10%;
+}
+
+img {
+    margin: 2px auto;
+}
+
+/* Date */
+
+.form-date {
+    width: 30%;
+    margin: 2% auto;
+}
+
+.form-personne {
+    width: 5%;
+    height: 10%;;
+    margin: 2% auto;
+}
+
+
+/* Soulignement */
+
+.underline:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+
+
+@media (max-width: 1900px) {
+    
+    .imagebiens {
+        height: 420px;
+        width: 700px;
+    }
+
+}
+
+@media (max-width: 1250px) {
+    
+    .imagebiens {
+        height: 400px;
+        width: 600px;
+    }
+
+}
+
+@media (max-width: 1070px) {
+    
+    /* input */
+
+.form-material .form-field:not(.form-default) {
+    width: 50%;
+}
+
+/* bouton */
+
+input.btn.press.red.inscription {
+    margin: 2% auto;
+    width: 25%;
+}
+
+}
+
+@media (max-width: 1050px) {
+    
+    .imagebiens {
+        height: 300px;
+        width: 500px;
+    }
+
+}
+
+
+@media (max-width: 850px){
+    .imagebiens {
+        height: 280px;
+        width: 420px;
+    }
+}
+
+@media (max-width: 800px){
+
+    /* navbar */
+
+    .navbar .navbar-menu .navbar-link {
+        font-size: 15px;
+        padding: 5px;
+    }
+
+    .navbar .navbar-brand {
+        font-size: 25px;
+        margin-left: -5px;
+    }
+
+    .bee-navbar{
+        font-size: 20px;
+    }
+
+    .imagebiens {
+        height: 250px;
+        width: 360px;
+    }
+
+    /* dropdown */
+
+    button.btn.primary.dropdown-trigger {
+        margin-top: 9px;
+    }
+}
+
+@media (max-width: 730px){
+
+
+    .imagebiens {
+        height: 150px;
+        width: 250px;
+    }
+
+
+}
+
+@media (max-width: 440px){
+
+
+    .imagebiens {
+        height: 100px;
+        width: 150px;
+    }
+
+    /* texte */
+
+    h1 {
+        font-size: 43px;
+    }
+
+    h6 {
+        font-size: 15px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    label {
+        font-size: 13px;
+        margin-left: 80px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    input {
+        font-size: 10px;
+    }
+
+}
